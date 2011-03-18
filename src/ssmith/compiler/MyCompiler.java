@@ -34,7 +34,7 @@ public class MyCompiler {
 	}
 
 	
-	public boolean compileFile(String source_file) throws IOException {
+	public static boolean CompileFile(String source_file) throws IOException {
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 		DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<JavaFileObject>();
 		StandardJavaFileManager fileManager = compiler.getStandardFileManager(diagnostics, null, null);
@@ -44,7 +44,8 @@ public class MyCompiler {
 		fileManager.close();
 		//System.out.println("Success: " + success);
 		if (!success) {
-			System.out.println(diagnostics.getDiagnostics().get(0));
+			throw new CompilerException(diagnostics.getDiagnostics().get(0).toString());
+			//System.out.println(diagnostics.getDiagnostics().get(0));
 		} else {
 			// Run it
 			//Class.forName("foo").newInstance();
