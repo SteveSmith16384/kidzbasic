@@ -2,7 +2,7 @@ package kidzbasic.compiler;
 
 import ssmith.lang.Functions;
 
-public class Tokenizer {
+public class Tokenizer { // todo - delete this
 
 	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
 
@@ -24,6 +24,8 @@ public class Tokenizer {
 		String chr = this.getNextChar();
 		if (chr.equalsIgnoreCase("\"")) {
 			return getRestOfStringLiteral(chr);
+		} else if (chr.equalsIgnoreCase("\n")) {
+			return chr;
 		} else if (Functions.IsNumeric(chr)) { // Get numbers
 			this_token.append(chr);
 			while (pos < data.length()) {
