@@ -389,7 +389,11 @@ public final class Functions {
 		String n2 = "," + needle + ",";
 		return (haystack.indexOf(n2) > 0);
 	}
+
 	
+	public static void p(Object o) {
+		System.out.println(o);
+	}
 	
 }
 
