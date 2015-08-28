@@ -1,0 +1,1 @@
+KidzBasic is a super-simplified version of Basic which also incudes a very simple application for entering and running the programs.  It is designed to introduce young children to the world of programming.
